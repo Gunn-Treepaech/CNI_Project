@@ -1,3 +1,5 @@
  - https://app.vagrantup.com/ubuntu
  - https://stackoverflow.com/questions/26993903/a-virtualbox-machine-with-the-name-homestead-already-exists
+ - https://www.linuxtechi.com/install-kubernetes-k8s-on-ubuntu-20-04/
+ - https://facsiaginsa.com/kubernetes/join-existing-kubernetes-cluster
  - SSH --> username: vagrant password: vagrant
