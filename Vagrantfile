@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
   NodeCount = 1
 
   # Define the list of IP addresses to use
-  ips = ["192.168.56.10"]
+  ips = ["192.168.56.20"]
 
   (1..NodeCount).each do |i|
 

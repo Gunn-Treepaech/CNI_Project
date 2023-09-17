@@ -8,7 +8,7 @@ systemctl restart ssh
 
 # Set Root password
 echo "Set root password"
-echo "Username: root"  # Assuming root user
-echo "Password: $1"    # Assuming the password is passed as the first argument
-echo -e "$1\n$1" | passwd root >/dev/null 2>&1
+echo "Username: $1"
+echo "Password: $2"
+echo -e "$2\n$2" | passwd $1 >/dev/null 2>&1
 
