@@ -1,1 +1,2 @@
-# CNI_Project
+ - https://app.vagrantup.com/ubuntu
+ - https://stackoverflow.com/questions/26993903/a-virtualbox-machine-with-the-name-homestead-already-exists
