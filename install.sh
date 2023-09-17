@@ -12,3 +12,8 @@ echo "Username: $1"
 echo "Password: $2"
 echo -e "$2\n$2" | passwd $1 >/dev/null 2>&1
 
+# Install Microk8s
+echo "Starting install Microk8s"
+sudo snap install microk8s --classic
+sudo snap alias microk8s.kubectl kubectl
+

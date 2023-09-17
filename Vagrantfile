@@ -15,7 +15,7 @@ Vagrant.configure(2) do |config|
 
     config.vm.define "workerVM#{i}" do |node|
 
-      # Create a VM with Alpine Linux 3.17.2
+      # Create a VM
       node.vm.box               = "ubuntu/focal64"
       node.vm.box_check_update  = false
       node.vm.hostname          = "workerVM#{i}.example.com"
@@ -26,13 +26,13 @@ Vagrant.configure(2) do |config|
       # Set the number of CPUs, RAM, and cores
       node.vm.provider :virtualbox do |v|
         v.name    = "workerVM#{i}"
-        v.memory  = 512
+        v.memory  = 1024
         v.cpus    = 1
       end
 
       node.vm.provider :libvirt do |v|
         v.nested  = true
-        v.memory  = 512
+        v.memory  = 1024
         v.cpus    = 1
       end
 
