@@ -1,0 +1,89 @@
+http://<>:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+
+kubectl delete node 						# delete node
+
+sudo nano /etc/hostname						# แก้ hostname
+
+sudo snap install microk8s --classic 				# ติ้ดตั้ง microk8s
+
+microk8s status 						# ดูสถานะของ microk8s
+
+sudo snap alias microk8s.kubectl kubectl
+
+kubectl get nodes 						# ดูสถานะ node ทั้งหมดใน cluster
+
+sudo microk8s.add-node 						# get ข้อมูลสำหรับเพิ่มเข้า cluster ใน node ที่เป็น master
+
+microk8s join <control plane_ip>:<port>/<token> 		# เพิ่ม node เข้า cluster
+
+sudo microk8s remove-node <node name> 				# ลบ node ออกจาก cluster ใน master
+
+sudo microk8s.leave						# ออกจาก cluster ใน worker
+
+---- WIFI ----
+
+kku-wifi@robot_5G-1 1q2w3e4r5t@robot
+
+---- Fix Bug ----
+-- Connection failed. The hostname (worker2) of the joining node does not resolve to the IP "192.168.50.94". Refusing join (400). --
+
+https://github.com/canonical/microk8s/issues/2967#issuecomment-1059942384
+
+---- Deployment ----
+kubectl delete -f bb.yaml		#delete deploy from file yaml
+
+kubectl apply -f deployment.yaml
+
+kubectl describe deployment nginx-deployment
+
+kubectl get pods -l app=nginx
+
+kubectl get pods -l app=nginx -o wide
+
+kubectl get deploy
+
+kubectl delete deploy <deployment name>
+
+kubectl get pods -A |grep calico
+
+kubectl create deployment nginx --image=nginx
+
+kubectl expose deployment nginx --port=80
+
+kubectl get svc
+
+kubectl run access --rm -ti --image busybox /bin/sh
+
+wget -q nginx -o -
+
+kubectl apply -f calico-policy.yaml
+
+kubectl run access1 --rm -ti --image busybox /bin/sh
+
+microk8s enable cilium
+
+microk8s.cilim status
+
+microk8s enable dns
+
+kubectl create deployment nginx-cilium --image=nginx
+
+kubectl expose deployment nginx-cilium --port=80
+
+kubectl apply -f cilium-policy.yaml
+
+microk8s cilium policy get
+
+wget -q --timeout=5 nginx-cilium -o -
+
+microk8s disable cilium
+
+kubectl get pods -o wide -n kube-system
+
+microk8s disable ha-cluster
+
+kubectl -n kube-system describe secrets $(microk8s kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+
+kubectl proxy &
+
+kubectl port-forward svc/nginx-deployment-6dccbd9b86-pdw8k -n ngix 8080:80 --address='0.0.0.0'

@@ -1,0 +1,9 @@
+version: 2
+wifis:
+  renderer: networkd
+  wlan0:
+    dhcp4: true
+    optional: true
+    access-points:
+      kku-wifi@robot_5G-1:
+        password: 1q2w3e4r5t@robot
