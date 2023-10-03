@@ -1,7 +1,7 @@
 ------ vagrant ----------------
 - SSH Only --> username: vagrant password: vagrant
 - Login --> username: root password pass
-- ------ ipref3 with Kubernetes ---------
+------ ipref3 with Kubernetes ---------
 - https://www.suse.com/support/kb/doc/?id=000020954
 - choose a pod to run in server mode:
 - kubectl exec -it <pod-name> -- iperf3 -s -p 12345
