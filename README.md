@@ -10,5 +10,5 @@ ipref3 with Kubernetes
     - kubectl exec -it <pod-name> -- iperf3 -c <server pod IP address> -p 12345
     - kubectl get pods -o wide
 
-docker images
+docker images linux/arm64
 - https://hub.docker.com/r/taoyou/iperf3-alpine
