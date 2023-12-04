@@ -1,4 +1,4 @@
-vagrant
+##vagrant
 - SSH Only --> username: vagrant password: vagrant
 - Login --> username: root password pass
 
