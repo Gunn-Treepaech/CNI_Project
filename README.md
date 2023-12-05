@@ -23,9 +23,9 @@
           kubectl apply -f iperf3-deployment.yaml
      ### delete deploy from file yaml:
           kubectl delete -f iperf3-deployment.yaml
-     ### Choose a pod to run in server mode:
+     ### เลือก pod เพื่อเป็น server mode:
           kubectl exec -it {PodName} -- iperf3 -s -p 12345
-     ### Choose a pod to run in client mode:
+     ### เลือก pod เพื่อเป็น client mode:
           kubectl exec -it {PodName} -- iperf3 -c {server pod IP address} -p 12345
      ### Get Pods:
           kubectl get pods -o wide
