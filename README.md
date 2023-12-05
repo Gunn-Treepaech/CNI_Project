@@ -5,7 +5,15 @@
 ## ipref3 with Kubernetes
 * https://www.suse.com/support/kb/doc/?id=000020954
   ## Project Commad:
-     ### get ข้อมูลสำหรับเพิ่มเข้า cluster ใน node ที่เป็น master:
+     ### แก้ hostname บน Linux:
+          sudo nano /etc/hostname	
+     ### ติ้ดตั้ง microk8s:
+          sudo snap install microk8s --classic 
+     ### ดูสถานะของ microk8s:
+          microk8s status
+     ### ดูสถานะ node ทั้งหมดใน cluster:
+          kubectl get nodes
+     ### Get ข้อมูลสำหรับเพิ่มเข้า cluster ใน node ที่เป็น master:
           sudo microk8s.add-node
      ### Choose a pod to run in server mode:
      ### Choose a pod to run in server mode:
