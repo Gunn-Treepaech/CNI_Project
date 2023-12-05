@@ -8,9 +8,7 @@
      kubectl exec -it {PodName} -- iperf3 -s -p 12345
 ### Choose a pod to run in client mode:
      kubectl exec -it {PodName} -- iperf3 -c {server pod IP address} -p 12345
-
-     
-     kubectl get pods -o wide
+      kubectl get pods -o wide
 
 ## Docker images linux/arm64
 * https://hub.docker.com/r/taoyou/iperf3-alpine
