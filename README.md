@@ -5,7 +5,8 @@
 ## ipref3 with Kubernetes
 * https://www.suse.com/support/kb/doc/?id=000020954
   ## Project Commad:
-     ### Choose a pod to run in server mode:
+     ### get ข้อมูลสำหรับเพิ่มเข้า cluster ใน node ที่เป็น master:
+          sudo microk8s.add-node
      ### Choose a pod to run in server mode:
      ### Choose a pod to run in server mode:
      ### Choose a pod to run in server mode:
