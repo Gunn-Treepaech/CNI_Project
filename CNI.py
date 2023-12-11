@@ -1,7 +1,7 @@
 import subprocess
 
-def run_kubectl_command(pod_name, server_pod_ip):
-    command = f"kubectl exec -it {pod_name} -- iperf3 -c {server_pod_ip} -p 12345"
+def run_kubectl_command(pod_name, server_pod_ip, package_size):
+    command = f"kubectl exec -it {pod_name} -- iperf3 -c {server_pod_ip} -p 12345 -n {package_size}"
     
     try:
         subprocess.run(command, shell=True, check=True)
@@ -12,6 +12,22 @@ def run_kubectl_command(pod_name, server_pod_ip):
 pod_name = input("Enter the pod name: ")
 server_pod_ip = input("Enter the server pod IP address: ")
 
-# วนลูปเรียกใช้คำสั่ง 10 ครั้ง
+print("เริ่มทดสอบที่ขนาด 256 Bytes")
 for _ in range(10):
-    run_kubectl_command(pod_name, server_pod_ip)
+    run_kubectl_command(pod_name, server_pod_ip, 256)
+print("เสร็จสิ้นการทดสอบที่ขนาด 256 Bytes")
+
+print("เริ่มทดสอบที่ขนาด 1024 Bytes")
+for _ in range(10):
+    run_kubectl_command(pod_name, server_pod_ip, 1024)
+print("เสร็จสิ้นการทดสอบที่ขนาด 1024 Bytes")
+
+print("เริ่มทดสอบที่ขนาด 4096 Bytes")
+for _ in range(10):
+    run_kubectl_command(pod_name, server_pod_ip, 4096)
+print("เสร็จสิ้นการทดสอบที่ขนาด 4096 Bytes")
+
+print("เริ่มทดสอบที่ขนาด 16384 Bytes")
+for _ in range(10):
+    run_kubectl_command(pod_name, server_pod_ip, 16384)
+print("เสร็จสิ้นการทดสอบที่ขนาด 16384 Bytes")
