@@ -9,7 +9,7 @@ def run_kubectl_command(pod_name, server_pod_ip, package_size):
         print(f"Error running kubectl command: {e}")
 
 def run_ping_command(pod_name, server_pod_ip_ping, package_size_ping):
-    command = f"kubectl exec -it {pod_name} -- ping {server_pod_ip_ping} -l {package_size_ping}"
+    command = f"kubectl exec -it {pod_name} -- ping -c 1 {server_pod_ip_ping} -l {package_size_ping}"
     
     try:
         subprocess.run(command, shell=True, check=True)
