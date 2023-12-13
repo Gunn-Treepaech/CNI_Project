@@ -5,19 +5,19 @@
 ## ipref3 with Kubernetes
 * https://www.suse.com/support/kb/doc/?id=000020954
   ## Project Commad:
-     ### แก้ hostname บน Linux:
+     ### แก้โฮสต์ของคอมพิวเตอร์ Linux:
           sudo nano /etc/hostname	
      ### ติ้ดตั้ง microk8s:
           sudo snap install microk8s --classic
      ### ถอนติ้ดตั้ง microk8s:
           sudo snap remove microk8s
-     ### ดูสถานะของ microk8s:
+     ### แสดงสถานะของ MicroK8s:
           microk8s status
      ### สร้างนามแฝง (alias) ให้กับคำสั่ง microk8s.kubectl ให้เป็น kubectl แทน:
           sudo snap alias microk8s.kubectl kubectl
      ### ดูสถานะ node ทั้งหมดใน cluster:
           kubectl get nodes
-     ### Get ข้อมูลสำหรับเพิ่มเข้า cluster ใน node ที่เป็น master:
+     ### ใช้เพิ่มโหนด (node) ใหม่ให้กับ MicroK8s:
           sudo microk8s.add-node
      ### ลบ node ออกจาก cluster ใน master:
           sudo microk8s remove-node <node name> 
