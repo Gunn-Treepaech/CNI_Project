@@ -8,9 +8,13 @@
      ### แก้ hostname บน Linux:
           sudo nano /etc/hostname	
      ### ติ้ดตั้ง microk8s:
-          sudo snap install microk8s --classic 
+          sudo snap install microk8s --classic
+     ### ถอนติ้ดตั้ง microk8s:
+          sudo snap remove microk8s
      ### ดูสถานะของ microk8s:
           microk8s status
+     ### สร้างนามแฝง (alias) ให้กับคำสั่ง microk8s.kubectl ให้เป็น kubectl แทน:
+          sudo snap alias microk8s.kubectl kubectl
      ### ดูสถานะ node ทั้งหมดใน cluster:
           kubectl get nodes
      ### Get ข้อมูลสำหรับเพิ่มเข้า cluster ใน node ที่เป็น master:
