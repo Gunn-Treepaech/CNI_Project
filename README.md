@@ -32,7 +32,9 @@
      ### เลือก pod เพื่อเป็น client mode:
           kubectl exec -it {PodName} -- iperf3 -c {server pod IP address} -p 12345
      ### Get Pods:
-          kubectl get pods -o wide
+          kubectl get pods -o wide -A
+     ### Delete all pods in Terminating status
+          for p in $(kubectl get pods | grep Terminating | awk '{print $1}'); do kubectl delete pod $p --grace-period=0 --force;done
 
 ## Docker images linux/arm64
 * https://hub.docker.com/r/taoyou/iperf3-alpine
