@@ -11,7 +11,7 @@ def run_kubectl_command(pod_name, server_pod_ip, package_size):
     run_command(command)
 
 def run_ping_command(pod_name, server_pod_ip, package_size_ping):
-    command = f"kubectl exec -it {pod_name} -- ping -c 1 {server_pod_ip} -l {package_size_ping}"
+    command = f"kubectl exec -it {pod_name} -- ping -c 1 {server_pod_ip} -s {package_size_ping}"
     run_command(command)
 
 def run_tests(pod_name, server_pod_ip, package_sizes):
