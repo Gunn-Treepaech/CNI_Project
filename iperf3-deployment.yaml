@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: iperf3-deployment
 spec:
-  replicas: 8
+  replicas: 10
   selector:
     matchLabels:
       app: iperf3

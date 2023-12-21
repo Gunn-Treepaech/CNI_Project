@@ -7,7 +7,7 @@ def run_command(command):
         print(f"Error running command: {e}")
 
 def run_kubectl_command(pod_name, server_pod_ip, package_size):
-    command = f"kubectl exec -it {pod_name} -- iperf3 -c {server_pod_ip} -p 12345 -n {package_size}"
+    command = f"kubectl exec -it {pod_name} -- iperf3 -c {server_pod_ip} -p 12345 --bidir -f k -n {package_size} "
     run_command(command)
 
 def run_ping_command(pod_name, server_pod_ip, package_size_ping):
@@ -40,10 +40,10 @@ if __name__ == "__main__":
     # ขนาดพิเศษ (100 MByte): ขนาดแพ็กเก็ตพิเศษเหมาะสำหรับการทดสอบ throughput ของเครือข่ายที่มีแบนด์วิดท์สูง
     # ------ END ------
 
-    iperf3_package_sizes = ["100M"]
-    ping_package_sizes = []
-    # iperf3_package_sizes = ["512", "6000", "40000", "100M"]
-    # ping_package_sizes = ["512_ping", "6000_ping", "40000_ping"]
+    #iperf3_package_sizes = ["100M"]
+    #ping_package_sizes = []
+    iperf3_package_sizes = ["512", "6000", "40000", "100M"]
+    ping_package_sizes = ["512_ping", "6000_ping", "40000_ping"]
 
     # Run tests
     run_tests(pod_name, server_pod_ip, iperf3_package_sizes + ping_package_sizes)
