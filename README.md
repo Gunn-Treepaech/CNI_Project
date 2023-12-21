@@ -35,6 +35,12 @@
           kubectl get pods -o wide -A
      ### Delete all pods in Terminating status
           for p in $(kubectl get pods | grep Terminating | awk '{print $1}'); do kubectl delete pod $p --grace-period=0 --force;done
-
+     ### Get a Shell to a Running Container
+          kubectl exec --stdin --tty {podname} --/bin/sh
+     ## หรือ
+          kubectl exec -it {podName} -- /bin/sh
+     ### หา IP ของ Pod จากชื่อ Pod โดยใช้ kubectl
+          kubectl get pod nginx-pod -o go-template --template '{{.status.podIP}}'
+          
 ## Docker images linux/arm64
 * https://hub.docker.com/r/taoyou/iperf3-alpine
