@@ -44,3 +44,7 @@
           
 ## Docker images linux/arm64
 * https://hub.docker.com/r/taoyou/iperf3-alpine
+## Understanding Kubernetes Cluster Networking
+* https://romanglushach.medium.com/understanding-the-different-types-of-kubernetes-network-models-e1c93db146c
+* https://collabnix.github.io/kubelabs/ClusterNetworking101/
+* https://medium.com/@extio/understanding-kubernetes-node-to-node-communication-a-deep-dive-e1d6a5ff87f3
