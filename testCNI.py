@@ -2,9 +2,10 @@ import subprocess
 
 def run_command(command):
     try:
-        subprocess.run(command, shell=True, check=True)
+        aw = subprocess.run(command, shell=True, check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error running command: {e}")
+    return aw
 
 def run_kubectl_command(pod_name, server_pod_ip, package_size):
     command = f"kubectl exec -it {pod_name} -- iperf3 -c {server_pod_ip} -p 12345 --bidir -f k -n {package_size} "
