@@ -45,6 +45,7 @@
 ## Docker images linux/arm64
 * https://hub.docker.com/r/taoyou/iperf3-alpine
 ## Understanding Kubernetes Cluster Networking
+  ## https://www.google.com/search?q=kubernetes+networking+models+overlay+underlay&sca_esv=593274838&sxsrf=AM9HkKlWnKcUA9WUmyfr58Jf0PtKWlzs9Q%3A1703344113052&ei=8feGZbvsAo6WjuMPz-692AU&oq=kubernetes+networking+models+overlay+undery&gs_lp=Egxnd3Mtd2l6LXNlcnAiK2t1YmVybmV0ZXMgbmV0d29ya2luZyBtb2RlbHMgb3ZlcmxheSB1bmRlcnkqAggAMgcQIRigARgKMgcQIRigARgKMgcQIRigARgKSKyvAVDPAljsgwFwAXgBkAEAmAGRAaABpA2qAQQ1LjExuAEDyAEA-AEBwgIKEAAYRxjWBBiwA8ICBRAhGKABwgIIECEYFhgeGB3CAggQABiABBiiBMICBhAAGB4YDcICBBAAGB7CAgYQABgWGB7iAwQYACBBiAYBkAYI&sclient=gws-wiz-serp
 * https://romanglushach.medium.com/understanding-the-different-types-of-kubernetes-network-models-e1c93db146c
 * https://collabnix.github.io/kubelabs/ClusterNetworking101/
 * https://medium.com/@extio/understanding-kubernetes-node-to-node-communication-a-deep-dive-e1d6a5ff87f3
