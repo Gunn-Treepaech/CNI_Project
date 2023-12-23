@@ -35,14 +35,14 @@ if __name__ == "__main__":
     pod_name = input("Enter the pod name: ")
     server_pod_name = input("Enter the server pod name: ")
 
-    pod_ip =  run_command("kubectl get pod " + {pod_name} + " -o go-template --template '{{.status.podIP}}'")
-    server_pod_ip = run_command("kubectl get pod " + {server_pod_name} + " -o go-template --template '{{.status.podIP}}'")
+    pod_ip =  run_command("kubectl get pod " + pod_name + " -o go-template --template '{{.status.podIP}}'")
+    server_pod_ip = run_command("kubectl get pod " + server_pod_name + " -o go-template --template '{{.status.podIP}}'")
 
     # ------ Define package sizes for both iperf3 and ping ------
     # ขนาดเล็ก (512 Byte): ขนาดแพ็กเก็ตขนาดเล็กเหมาะสำหรับการทดสอบความเร็วในการส่งข้อมูลแบบ bursty หรือการส่งข้อมูลจำนวนมากในเวลาสั้นๆ
     # ขนาดกลาง (6,000 Byte): ขนาดแพ็กเก็ตขนาดกลางเป็นขนาดแพ็กเก็ตมาตรฐานที่มักใช้ในการทดสอบเครือข่าย
     # ขนาดใหญ่ (40,000 Byte): ขนาดแพ็กเก็ตขนาดใหญ่เหมาะสำหรับการทดสอบ throughput ของเครือข่าย
-    # ขนาดพิเศษ (100 MByte): ขนาดแพ็กเก็ตพิเศษเหมาะสำหรับการทดสอบ throughput ของเครือข่ายที่มีแบนด์วิดท์สูง
+    # ขนาดพิเศษ (100 MByte): ขนาดแพ็กเก็ตพิเศษเหมาะสำหรับการทดสอบ throughput ของเครือข่ายที่มีแบนด์วิดท์สูงadd
     # ------ END ------
 
     #iperf3_package_sizes = ["100M"]
