@@ -8,7 +8,7 @@
      ### แก้โฮสต์ของคอมพิวเตอร์ Linux:
           sudo nano /etc/hostname	
      ### ติ้ดตั้ง microk8s:
-          sudo snap install microk8s --classic --channel=1.27
+          sudo snap install microk8s --classic --channel=1.28
      ### ถอนติ้ดตั้ง microk8s:
           sudo snap remove microk8s
      ### แสดงสถานะของ MicroK8s:
