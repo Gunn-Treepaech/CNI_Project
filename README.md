@@ -43,13 +43,15 @@
           kubectl get pod nginx-pod -o go-template --template '{{.status.podIP}}'
      ### Path Calico yaml Microk8s
           cd /var/snap/microk8s/current/args/cni-network/
-     ### Path Cilium yaml Microk8s จากการใช้คำสั่ง microk8s enable cilium
-          cd /var/snap/microk8s/6239/actions/
      ### Apply CNI Calico yaml
           microk8s kubectl apply -f /var/snap/microk8s/current/args/cni-network/cni.yaml
      ### Apply CNI Cilium yaml
-           microk8s kubectl apply -f /var/snap/microk8s/6239/actions/cilium.yaml
-          
+          microk8s kubectl apply -f /var/snap/microk8s/6239/actions/cilium.yaml
+     ### เรียกข้อมูลการกำหนดค่า Cilium YAML
+          microk8s kubectl get configmap cilium-config -n kube-system -o yaml
+     ### บันทึกการกำหนดค่า
+          microk8s kubectl get configmap cilium-config -n kube-system -o yaml > cilium-config.yaml
+  
 ## Docker images linux/arm64
 * https://hub.docker.com/r/taoyou/iperf3-alpine
 ## Understanding Kubernetes Cluster Networking
