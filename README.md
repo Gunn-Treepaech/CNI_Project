@@ -41,10 +41,14 @@
           kubectl exec -it {podName} -- /bin/sh
      ### หา IP ของ Pod จากชื่อ Pod โดยใช้ kubectl
           kubectl get pod nginx-pod -o go-template --template '{{.status.podIP}}'
-     ### Path yaml Microk8s
+     ### Path Calico yaml Microk8s
           cd /var/snap/microk8s/current/args/cni-network/
+     ### Path Cilium yaml Microk8s จากการใช้คำสั่ง microk8s enable cilium
+          cd /var/snap/microk8s/6239/actions/
      ### Apply CNI Calico yaml
           microk8s kubectl apply -f /var/snap/microk8s/current/args/cni-network/cni.yaml
+     ### Apply CNI Cilium yaml
+           microk8s kubectl apply -f /var/snap/microk8s/6239/actions/cilium.yaml
           
 ## Docker images linux/arm64
 * https://hub.docker.com/r/taoyou/iperf3-alpine
