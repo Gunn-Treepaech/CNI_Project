@@ -41,6 +41,8 @@
           kubectl exec -it {podName} -- /bin/sh
      ### หา IP ของ Pod จากชื่อ Pod โดยใช้ kubectl
           kubectl get pod nginx-pod -o go-template --template '{{.status.podIP}}'
+     ### Path yaml Microk8s
+          cd /var/snap/microk8s/current/args/cni-network/
           
 ## Docker images linux/arm64
 * https://hub.docker.com/r/taoyou/iperf3-alpine
