@@ -29,7 +29,7 @@ def run_tests(pod_name, server_pod_ip, package_sizes):
                 run_ping_command(pod_name, server_pod_ip, size.split('_')[0])
 
                 print(f"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-                print(f"Ping Test round {counter}")
+                print(f"Ping Test round {counter} Completed")
                 print(f"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
             else:
                 print(f"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
@@ -39,7 +39,7 @@ def run_tests(pod_name, server_pod_ip, package_sizes):
                 run_kubectl_command(pod_name, server_pod_ip, size)
 
                 print(f"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-                print(f"Test round {counter}")
+                print(f"Test round {counter} Completed")
                 print(f"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
             counter += 1
         print(f"----------------------------------------------------------------------")
