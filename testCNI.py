@@ -23,13 +23,13 @@ def run_tests(pod_name, server_pod_ip, package_sizes):
         for _ in range(10):
             if "ping" in size:
                 print(f"----------------------------------------------------------------------")
-                print(f"Ping Test round {counter}")
+                print(f"{size} Ping Test round {counter}")
                 print(f"----------------------------------------------------------------------")
                 # Code
                 run_ping_command(pod_name, server_pod_ip, size.split('_')[0])
             else:
                 print(f"----------------------------------------------------------------------")
-                print(f"Test round {counter}")
+                print(f"{size} Test round {counter}")
                 print(f"----------------------------------------------------------------------")
                 # Code
                 run_kubectl_command(pod_name, server_pod_ip, size)
