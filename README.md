@@ -6,7 +6,9 @@
 * https://www.suse.com/support/kb/doc/?id=000020954
   ## Project Commad:
      ### แก้โฮสต์ของคอมพิวเตอร์ Linux:
-          sudo nano /etc/hostname	
+     ```sh
+     sudo nano /etc/hostname
+     ```
      ### ติ้ดตั้ง microk8s:
           sudo snap install microk8s --classic --channel=1.28
      ### ถอนติ้ดตั้ง microk8s:
