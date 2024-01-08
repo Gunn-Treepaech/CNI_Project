@@ -35,7 +35,13 @@
      ```
      ### ลบ node ออกจาก cluster ใน master:
      ```sh
-     sudo microk8s remove-node <node name>
+     sudo microk8s remove-node worker1
+     sudo microk8s remove-node worker2
+     sudo microk8s remove-node worker3
+     sudo microk8s remove-node workervm1
+     sudo microk8s remove-node workervm2
+     sudo microk8s remove-node workervm3
+     sudo microk8s remove-node workervm4
      ```
      ### ออกจาก cluster ใน worker:
      ```sh
