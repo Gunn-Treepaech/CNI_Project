@@ -7,7 +7,7 @@ def run_command(command):
         print(f"Error running command: {e}")
 
 def run_kubectl_command(pod_name, server_pod_ip, package_size):
-    command = f"kubectl exec -it {pod_name} -- iperf3 -c {server_pod_ip} -p 12345 -f k -n {package_size} "
+    command = f"kubectl exec -it {pod_name} -- iperf3 -c {server_pod_ip} -p 12345 -f k -n {package_size} -N"
     run_command(command)
 
 def run_ping_command(pod_name, server_pod_ip, package_size_ping):
