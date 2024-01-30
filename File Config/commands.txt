@@ -80,7 +80,7 @@ microk8s disable cilium
 
 kubectl get pods -o wide -n kube-system
 
-microk8s disable ha-cluster
+microk8s disable ha-cluster --force
 
 kubectl -n kube-system describe secrets $(microk8s kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
 
