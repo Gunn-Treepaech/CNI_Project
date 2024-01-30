@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gun-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gun
+  template:
+    metadata:
+      labels:
+        app: gun
+    spec:
+      containers:
+      - name: gun
+        image: treepaech/gun  # Change the image to treepaech/gun
+        ports:
+        - containerPort: 4000  # Change the containerPort to match the exposed port of the application
