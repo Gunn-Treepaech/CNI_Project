@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: video-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: video-streaming
+  template:
+    metadata:
+      labels:
+        app: video-streaming
+    spec:
+      containers:
+      - name: video-container
+        image: treepaech/gun-ex4-video
+        ports:
+        - containerPort: 80
+        env:
+        - name: PORT
+          value: "80"
+        - name: RABBIT
+          value: "amqp://guest:guest@rabbit-service:5672"
+        - name: NODE_ENV
+          value: "development"
+      dependsOn:
+      - name: rabbit
