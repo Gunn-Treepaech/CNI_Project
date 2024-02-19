@@ -1,0 +1,23 @@
+version: '3'
+services:
+
+  rabbit:
+    image: rabbitmq:3.12.4-management
+    container_name: rabbit
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    restart: always
+
+  video-streaming:
+    image: treepaech/gun-ex4-video
+    container_name: video-streaming
+    ports:
+      - "4001:80"
+    environment:
+      - PORT=80
+      - RABBIT=amqp://guest:guest@rabbit:5672
+      - NODE_ENV=development
+    depends_on:
+      - rabbit
+    restart: "no"
