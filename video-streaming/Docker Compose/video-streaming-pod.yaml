@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: video-streaming
+  name: video-streaming
+spec:
+  containers:
+    - env:
+        - name: NODE_ENV
+          value: development
+        - name: PORT
+          value: "80"
+        - name: RABBIT
+          value: amqp://guest:guest@rabbit:5672
+      image: treepaech/gun-ex4-video
+      name: video-streaming
+      ports:
+        - containerPort: 80
+      resources: {}
+  restartPolicy: Never
+status: {}
