@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: video-deployment
+  name: video-streaming-deployment
 spec:
   replicas: 1
   selector:
@@ -13,7 +13,7 @@ spec:
         app: video-streaming
     spec:
       containers:
-      - name: video-container
+      - name: video-streaming
         image: treepaech/gun-ex4-video
         ports:
         - containerPort: 80
@@ -24,5 +24,15 @@ spec:
           value: "amqp://guest:guest@rabbit-service:5672"
         - name: NODE_ENV
           value: "development"
-      dependsOn:
-      - name: rabbit
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: video-streaming-service
+spec:
+  selector:
+    app: video-streaming
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
