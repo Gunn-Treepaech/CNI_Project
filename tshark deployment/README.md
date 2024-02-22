@@ -3,7 +3,7 @@
 - https://gist.github.com/githubfoam/6c9e07f95c2eb03ec4ae9709252c713f
   ### สร้าง Deployment และ Service
   ```sh
-  kubectl apply -f netshoot-deployment.yaml
+  kubectl apply -f tshark-deployment.yaml
   ```
   ### เข้าถึง netshoot container
   ```sh
