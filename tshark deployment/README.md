@@ -5,6 +5,10 @@
   ```sh
   kubectl apply -f tshark-deployment.yaml
   ```
+  ### ลบ Deployment และ Service
+  ```sh
+  kubectl delete -f tshark-deployment.yaml
+  ```
   ### เข้าถึง netshoot container
   ```sh
   kubectl exec -it <pod_name> -- /bin/bash
