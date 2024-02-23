@@ -17,7 +17,7 @@ spec:
           value: "80"
         - name: RABBIT
           value: amqp://guest:guest@rabbit:5672
-      image: treepaech/gun-ex4-video
+      image: treepaech/ex4-video
       name: video-streaming
       ports:
         - containerPort: 80

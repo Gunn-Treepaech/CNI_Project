@@ -10,7 +10,7 @@ services:
     restart: always
 
   video-streaming:
-    image: treepaech/gun-ex4-video
+    image: treepaech/ex4-video
     container_name: video-streaming
     ports:
       - "4001:80"

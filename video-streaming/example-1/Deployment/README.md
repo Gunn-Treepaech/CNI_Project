@@ -1,8 +1,8 @@
 ##  apply YAML
   ```sh
-  kubectl apply -f gun-deployment.yaml
+  kubectl apply -f video-deployment.yaml
   ```
 ##  delete YAML
   ```sh
-  kubectl delete -f gun-deployment.yaml
+  kubectl delete -f video-deployment.yaml
   ```

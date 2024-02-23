@@ -1,6 +1,6 @@
 ##  build images
   ```sh
-  docker build -t ex1-video .
+  docker build --rm -t ex1-video .
   ```
 ##  run images
   ```sh
