@@ -27,5 +27,5 @@
 - https://medium.com/@nnilesh7756/copy-directories-and-files-to-and-from-kubernetes-container-pod-19612fa74660
   ### command
   ```sh
-  kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar
+  kubectl cp <some-namespace>/<some-pod>:/tmp/foo /videos
   ```
