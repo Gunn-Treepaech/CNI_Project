@@ -1,4 +1,12 @@
-# docker image build ให้ใช้ได้ทั้ง amd64 arm64
+# Docker Image Build ให้ใช้ได้ทั้ง amd64 arm64
+  ### ติดตั้ง Docker Buildx plugin ผ่าน package manager
+  ```sh
+  apt install docker-buildx-plugin
+  ```
+  ### ติดตั้ง Docker Buildx plugin ลงในระบบ Docker CLI เพื่อให้สามารถใช้งาน Docker Buildx ได้
+  ```sh
+  docker buildx install
+  ```
   ### ติดตั้ง buildx CLI
   ```sh
   docker buildx create --use
