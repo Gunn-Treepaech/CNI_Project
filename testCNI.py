@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
     #iperf3_package_sizes = ["100M"]
     #ping_package_sizes = []
-    iperf3_package_sizes = ["100", "1000", "10000", "100000"]
+    iperf3_package_sizes = ["100", "200", "400"]
     ping_package_sizes = ["100_ping", "1000_ping", "10000_ping"]
 
     # Run tests
