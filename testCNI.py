@@ -51,9 +51,8 @@ if __name__ == "__main__":
     # ------ END ------
 
     #iperf3_package_sizes = ["100M"]
-    #ping_package_sizes = []
-    iperf3_package_sizes = ["100", "200", "400"]
-    ping_package_sizes = ["100_ping", "1000_ping", "10000_ping"]
-
+    # ["100_ping", "1000_ping", "10000_ping"]
+    iperf3_package_sizes = ["100", "200", "400", "800", "1600", "3200", "6400", "12800", "25600", "51200", "102400"]
+    ping_package_sizes = ["100_ping", "200_ping", "400_ping", "800_ping", "1600_ping", "3200_ping", "6400_ping", "12800_ping", "25600_ping", "51200_ping"]
     # Run tests
     run_tests(pod_name, server_pod_ip, iperf3_package_sizes + ping_package_sizes)
