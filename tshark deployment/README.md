@@ -23,7 +23,7 @@
   ```
   ### บันทึก traffic ลงในไฟล์
   ```sh
-  tshark -i 2 -w <ชื่อไฟล์.pcap>
+  tshark -i <หมายเลขลำดับของ interface> -w <ชื่อไฟล์.pcap>
   ```
   ### เรียกใช้ไฟล์ pcap หน้าต่าง interface ด้วย termshark
   ```sh
