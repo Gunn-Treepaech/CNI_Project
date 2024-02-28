@@ -19,7 +19,7 @@ def run_tests(pod_name, server_pod_ip, package_sizes):
     for size in package_sizes:
         counter = 1
         print(f"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-        print(f"Starting test with package size {size} Bytes")
+        print(f"Pod {pod_name} : Starting test with package size {size} Bytes")
         print(f"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
         for _ in range(10):
             if "ping" in size:
@@ -40,7 +40,7 @@ def run_tests(pod_name, server_pod_ip, package_sizes):
             counter += 1
 
         print(f"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-        print(f"Test completed with package size {size} Bytes")
+        print(f"Pod {pod_name} : Test completed with package size {size} Bytes")
         print(f"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
 if __name__ == "__main__":
