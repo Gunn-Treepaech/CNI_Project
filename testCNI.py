@@ -1,21 +1,21 @@
 import subprocess
 import asyncio
 
-async def run_command(command):
+def run_command(command):
     try:
         subprocess.run(command, shell=True, check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error running command: {e}")
 
-async def run_kubectl_command(pod_name, server_pod_ip, package_size):
+def run_kubectl_command(pod_name, server_pod_ip, package_size):
     command = f"kubectl exec -it {pod_name} -- iperf3 -c {server_pod_ip} -p 12345 -f k -n {package_size} "
     run_command(command)
 
-async def run_ping_command(pod_name, server_pod_ip, package_size_ping):
+def run_ping_command(pod_name, server_pod_ip, package_size_ping):
     command = f"kubectl exec -it {pod_name} -- ping -c 1 {server_pod_ip} -s {package_size_ping}"
     run_command(command)
 
-async def run_tests(pod_name, server_pod_ip, package_sizes):
+def run_tests(pod_name, server_pod_ip, package_sizes):
     for size in package_sizes:
         counter = 1
         print(f"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
