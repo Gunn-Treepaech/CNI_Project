@@ -17,3 +17,6 @@ spec:
         image: treepaech/ex1-video
         ports:
         - containerPort: 4000  # Change the containerPort to match the exposed port of the application
+      #nodeSelector:
+        # Specify labels for the desired nodes (worker1 only)
+        #kubernetes.io/hostname: workervm1

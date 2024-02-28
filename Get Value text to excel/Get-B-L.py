@@ -22,7 +22,7 @@ def extract_bitrate_data(file_path):
     for match in matches:
         values = re.findall(r'\d+\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)', match)
         if values:
-            data.append({'Bitrate': values[0][3]})
+            data.append({'Bitrate': float(values[0][3])})  # Convert extracted value to float
 
     return data
 
@@ -43,10 +43,13 @@ def extract_round_trip_data(file_path):
     pattern = re.compile(r'round-trip min/avg/max = (\d+\.\d+)/(\d+\.\d+)/(\d+\.\d+) ms')
     matches = pattern.findall(data)
 
-    # Extract only the 'avg' values
-    avg_values = [match[1] for match in matches]
+    # Extract only the 'avg' values and convert them to float
+    avg_values = [float(match[1]) for match in matches]
 
     return pd.Series(avg_values, name='avg')  # Create a Series with the name 'avg'
+
+# The rest of the code remains the same...
+
 
 def write_to_combined_excel(bitrate_data, round_trip_data, excel_file):
     """Writes the extracted bitrate and round-trip data to a combined Excel file.
