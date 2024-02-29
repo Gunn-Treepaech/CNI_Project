@@ -45,9 +45,9 @@ if __name__ == "__main__":
     
     if lens > 1:
         for i in alls_name_pod:
-            run_tests(i, server_pod_ip, iperf3_package_sizes + ping_package_sizes, output_file)
+            asyncio.create_task(run_tests(i, server_pod_ip, iperf3_package_sizes + ping_package_sizes, output_file))
     else:
-        run_tests(pod_name, server_pod_ip, iperf3_package_sizes + ping_package_sizes, output_file)
+        asyncio.create_task(run_tests(pod_name, server_pod_ip, iperf3_package_sizes + ping_package_sizes, output_file))
     
     #localhost = input("ใส่ localhost: ")
     #run_tests(pod_name, server_pod_ip, iperf3_package_sizes + ping_package_sizes, output_file, localhost)
