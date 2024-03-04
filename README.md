@@ -79,3 +79,12 @@
   ```sh
   microk8s kubectl apply -f /var/snap/microk8s/current/args/cni-network/cni.yaml
   ```
+# เปลี่ยน CNI เป็น Cilium
+  ```sh
+  microk8s enable community
+  microk8s enable cilium
+  ```
+# เปลี่ยน CNI เป็น Flannel
+  ```sh
+  microk8s disable ha-cluster --force
+  ```
