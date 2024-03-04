@@ -3,6 +3,16 @@
   ```sh
   sudo nano /etc/hostname
   ```
+  ### ip ที่ใช่ในการทดสอบ
+  ```sh
+  192.168.50.11 worker1
+  192.168.50.12 worker2
+  192.168.50.13 worker3
+  192.168.50.21 workervm1
+  192.168.50.22 workervm2
+  192.168.50.23 workervm3
+  192.168.50.24 workervm4
+  ```
   ### ติ้ดตั้ง microk8s:
   ```sh
   sudo snap install microk8s --classic --channel=1.28
