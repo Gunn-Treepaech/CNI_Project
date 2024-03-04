@@ -54,6 +54,8 @@ if __name__ == "__main__":
     if lens_pod > 1 and lens_output > 1 and lens_output == lens_pod:
         for i in range(lens_pod):
             run_tests(alls_name_pod[i], server_pod_ip, iperf3_package_sizes + ping_package_sizes, all_output_file[i])
+            print("Sleep 10 S ........")
             time.sleep(10)
+            print("Awake!!")
     else:
         run_tests(pod_name, server_pod_ip, iperf3_package_sizes + ping_package_sizes, output_file)
