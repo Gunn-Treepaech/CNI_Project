@@ -6,7 +6,8 @@ def run_command(command, output_file):
         with open(output_file, "a") as file:
             subprocess.run(command, shell=True, check=True, stdout=file, stderr=file)
     except subprocess.CalledProcessError as e:
-        print(f"Error running command: {e}", file=file)
+        with open(output_file, "a") as file:
+            print(f"Error running command: {e}", file=file)
 
 def run_kubectl_command(pod_name, server_pod_ip, package_size, output_file):
     command = f"kubectl exec -it {pod_name} -- iperf3 -c {server_pod_ip} -p 12345 -f k -n {package_size} -l {package_size}"
@@ -48,7 +49,7 @@ if __name__ == "__main__":
     all_output_file = output_file.split()
     lens_output = len(all_output_file)
 
-    # ทดสอบและรันโค้ด asynchronous ตามจำนวน Pods หรือใช้ Default
+    # ทดสอบและรันโค้ด ตามจำนวน Pods หรือใช้ Default
     if lens_pod > 1 and lens_output > 1 and lens_output == lens_pod:
         for i in range(lens_pod):
             run_tests(alls_name_pod[i], server_pod_ip, iperf3_package_sizes + ping_package_sizes, all_output_file[i])
