@@ -5,13 +5,13 @@
   ```
   ### ip ที่ใช่ในการทดสอบ
   ```sh
-  192.168.50.11 worker1
-  192.168.50.12 worker2
-  192.168.50.13 worker3
-  192.168.50.21 workervm1
-  192.168.50.22 workervm2
-  192.168.50.23 workervm3
-  192.168.50.24 workervm4
+  xxx.xxx.50.11 worker1
+  xxx.xxx.50.12 worker2
+  xxx.xxx.50.13 worker3
+  xxx.xxx.50.21 workervm1
+  xxx.xxx.50.22 workervm2
+  xxx.xxx.50.23 workervm3
+  xxx.xxx.50.24 workervm4
   ```
   ### ติ้ดตั้ง microk8s:
   ```sh
